@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
@@ -275,7 +276,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (other.gameObject.name == "EndingTrigger")
             {
                 Debug.Log("Game End");
-                Application.Quit();
+                SceneManager.LoadScene("StartScene");
             }
 
             if (!gameManager.doorIsBeingOperated)

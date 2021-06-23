@@ -29,7 +29,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject boogieObjectsParent; //The top most (empty) Game Object, this way you only have to activate 1 object.
     [SerializeField] private AudioSource JukeBoxAudio; //The Audio Source the music needs to play from
     [SerializeField] private AudioClip songToPlay;
-    
+
+    [SerializeField] private GameObject crystalStart;
+    [SerializeField] private GameObject crystalTransformation;
+    public bool crystalTransformed = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +41,8 @@ public class GameManager : MonoBehaviour
         adaptableObjects.AddRange(GameObject.FindGameObjectsWithTag("AdaptableWall"));
 
         boogieObjectsParent.SetActive(false); //The boogie objects get disabled on startup (in case its left enabled on accident in the scene)
+        crystalStart.SetActive(true);
+        crystalTransformation.SetActive(false);
     }
 
     // Update is called once per frame
@@ -65,13 +71,29 @@ public class GameManager : MonoBehaviour
         StartCoroutine(BoogieDuration());
     }
 
+    public void ToggleCrystals()
+    {
+        if (crystalTransformed)
+        {
+            crystalStart.SetActive(true);
+            crystalTransformation.SetActive(false);
+            crystalTransformed = false;
+        }
+        else
+        {
+            crystalStart.SetActive(false);
+            crystalTransformation.SetActive(true);
+            crystalTransformed = true;
+        }
+    }
+
     //The Coroutine for the boogie time
     private IEnumerator BoogieDuration()
     {
         //Anything that needs to happen during the boogie time, add it here.
 
         //the line below is basically a Delay(seconds) function. If adding more delays make sure the total seconds are 40-45 seconds.
-        yield return new WaitForSeconds(42);
+        yield return new WaitForSeconds(41);
         //Animate the objects going away again? (if you're doing this, add a delay between the SetActive below).
 
         //The boogie time is over and the objects get disabled again.
