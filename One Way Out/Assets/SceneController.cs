@@ -13,6 +13,9 @@ public class SceneController : MonoBehaviour
     {
         warningPanel.SetActive(true);
         buttonsPanel.SetActive(false);
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     // Update is called once per frame

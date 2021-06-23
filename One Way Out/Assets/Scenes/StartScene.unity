@@ -2610,7 +2610,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: One Way Out
+  m_Text: One Way Exit
 --- !u!222 &856545839
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4592,7 +4592,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Epilipsy warning
+  m_Text: Epilepsy warning
 --- !u!222 &1629103165
 CanvasRenderer:
   m_ObjectHideFlags: 0
