@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     private List<GameObject> adaptableObjects = new List<GameObject>();
     [SerializeField] private Material changeMaterial1;
     [SerializeField] private Material changeMaterial2;
+    [SerializeField] private Material changeMaterial3;
     public int currentActiveMaterial = 0;
 
     //Boogie variables
@@ -103,21 +104,29 @@ public class GameManager : MonoBehaviour
 
     public void ChangeTextures(int option)
     {
-        if(option == 1)
+        if (option == 1)
         {
-            foreach(GameObject item in adaptableObjects)
+            foreach (GameObject item in adaptableObjects)
             {
                 item.GetComponent<Renderer>().material = changeMaterial1;
             }
             currentActiveMaterial = 1;
         }
-        else
+        else if (option == 2)
         {
             foreach (GameObject item in adaptableObjects)
             {
                 item.GetComponent<Renderer>().material = changeMaterial2;
             }
             currentActiveMaterial = 2;
+        }
+        else
+        {
+            foreach (GameObject item in adaptableObjects)
+            {
+                item.GetComponent<Renderer>().material = changeMaterial3;
+            }
+            currentActiveMaterial = 3;
         }
     }
 
